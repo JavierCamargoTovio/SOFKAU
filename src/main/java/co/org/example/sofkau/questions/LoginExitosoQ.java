@@ -11,14 +11,14 @@ import static co.org.example.sofkau.util.manager.ComparatorManager.compareDiffer
 
 
 
-public class LoginQ implements Question<Boolean> {
+public class LoginExitosoQ implements Question<Boolean> {
 
 
-    private LoginQ() {
+    private LoginExitosoQ() {
     }
 
-    public static LoginQ verificarLogin() {
-        return new LoginQ();
+    public static LoginExitosoQ verificarLogin() {
+        return new LoginExitosoQ();
     }
 
     @Override

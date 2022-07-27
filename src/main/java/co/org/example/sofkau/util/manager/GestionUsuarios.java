@@ -11,4 +11,9 @@ public class GestionUsuarios {
         return new Usuario(USUARIO, CLAVE);
 
     }
+
+    public static Usuario getUsuarioInvalido() {
+        return new Usuario(USUARIO_INVALIDO, CLAVE_INVALIDA);
+
+    }
 }

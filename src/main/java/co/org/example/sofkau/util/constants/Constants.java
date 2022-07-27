@@ -19,7 +19,7 @@ public class Constants {
 
     public static final String URL = PROPERTIES.getProperty("url");
     public static final String NAME_USER = PROPERTIES.getProperty("nameUsuario");
-
+    public static final String MENSAJE_ERROR = PROPERTIES.getProperty("mensajeError");
     public static Properties loadProperties() {
         Properties properties = new Properties();
         try (FileInputStream fis = new FileInputStream(RUTA_PROPERTIES)) {
@@ -35,6 +35,9 @@ public class Constants {
 
         public static final String USUARIO = PROPERTIES.getProperty("usario");
         public static final String CLAVE = PROPERTIES.getProperty("clave");
+
+        public static final String USUARIO_INVALIDO = PROPERTIES.getProperty("usarioErroneo");
+        public static final String CLAVE_INVALIDA = PROPERTIES.getProperty("claveErronea");
 
         private Usuarios() {
         }

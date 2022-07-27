@@ -1,8 +1,9 @@
 package co.org.example.sofkau.stepdefinitios;
 
-import co.org.example.sofkau.questions.LoginQ;
+import co.org.example.sofkau.questions.LoginExitosoQ;
+import co.org.example.sofkau.questions.LoginFallidoQ;
 import co.org.example.sofkau.tasks.AbrirPagina;
-import co.org.example.sofkau.tasks.Login;
+import co.org.example.sofkau.tasks.LoginFallido;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -41,12 +42,12 @@ public class LoginStep {
 
     @When("ingresa las crenciales validas")
     public void ingresa_las_crenciales_validas() {
-        theActorInTheSpotlight().attemptsTo(Login.login());
+        theActorInTheSpotlight().attemptsTo(co.org.example.sofkau.tasks.LoginExitoso.login());
     }
 
     @Then("se logea correctamente")
     public void se_logea_correctamente() {
-        theActorInTheSpotlight().should(seeThat(LoginQ.verificarLogin()));
+        theActorInTheSpotlight().should(seeThat(LoginExitosoQ.verificarLogin()));
         LOGGER.info(MSG_EXEC_ACCION);
     }
   /**
@@ -54,14 +55,13 @@ public class LoginStep {
   * */
     @When("ingresa las crenciales no validas")
     public void ingresa_las_crenciales_no_validas() {
-        // Write code here that turns the phrase above into
-        throw new cucumber.api.PendingException();
+        theActorInTheSpotlight().attemptsTo(LoginFallido.login());
     }
 
     @Then("se presenta un mensaje fallido")
     public void se_presenta_un_mensaje_fallido() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        theActorInTheSpotlight().should(seeThat(LoginFallidoQ.verificarLoginFallido()));
+        LOGGER.info(MSG_EXEC_ACCION);
     }
 
 }

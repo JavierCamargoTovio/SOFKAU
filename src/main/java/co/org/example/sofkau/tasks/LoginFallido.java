@@ -10,14 +10,14 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.thucydides.core.annotations.Step;
 
-public class Login implements Task {
-    Usuario usuario = GestionUsuarios.getUser();
-    public Login() {
+public class LoginFallido implements Task {
+    Usuario usuario = GestionUsuarios.getUsuarioInvalido();
+    public LoginFallido() {
 
     }
 
     @Override
-    @Step("{0} ingresa las credenciales y inicia sesión")
+    @Step("{0} ingresa las credenciales incorrectas y inicia sesión")
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
@@ -27,8 +27,8 @@ public class Login implements Task {
         );
     }
 
-    public static Login login() {
-        return Tasks.instrumented(Login.class);
+    public static LoginFallido login() {
+        return Tasks.instrumented(LoginFallido.class);
     }
 
 }
