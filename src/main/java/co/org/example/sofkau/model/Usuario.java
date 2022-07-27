@@ -1,20 +1,20 @@
 package co.org.example.sofkau.model;
 
 public class Usuario {
-    private String usuario;
+    private String user;
     private String clave;
 
     public Usuario(String usuario, String clave) {
-        this.usuario = usuario;
+        this.user = usuario;
         this.clave = clave;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUser() {
+        return user;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUser(String usuario) {
+        this.user = usuario;
     }
 
     public String getClave() {

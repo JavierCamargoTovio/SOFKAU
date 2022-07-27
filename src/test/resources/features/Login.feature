@@ -1,10 +1,15 @@
 Feature: Login a sofka university
 
-  @Login
-  Scenario Outline: Login a Sofka U exitoso
-    Given un usuario de sofka u abre la página
-    When ingresa "<usuario>" y "<clave>"
+  @LoginExitoso
+  Scenario: Login a SofkaU exitoso
+    Given un usuario que ingresa la página de sofkaU
+    When ingresa las crenciales validas
     Then se logea correctamente
-    Examples:
-      | usuario                     | clave          |
-      | javier.camargo@sofka.com.co | Camargo029207* |
+
+
+  @LoginFallido
+  Scenario: Login a SofkaU fallido
+    Given un usuario que ingresa la página de sofkaU
+    When ingresa las crenciales no validas
+    Then se presenta un mensaje fallido
+

@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features/Login.feature",
+        tags = {"@LoginExitoso"},
         glue = "co.org.example.sofkau.stepdefinitios")
 public class RunnerLogin {
 
