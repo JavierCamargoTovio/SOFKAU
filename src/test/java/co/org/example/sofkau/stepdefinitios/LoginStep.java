@@ -54,7 +54,7 @@ public class LoginStep {
   * */
     @When("ingresa las crenciales no validas")
     public void ingresa_las_crenciales_no_validas() {
-        // Write code here that turns the phrase above into concrete actions
+        // Write code here that turns the phrase above into
         throw new cucumber.api.PendingException();
     }
 
